@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jQuary File -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script>
+        var loc;
+        function Getlocation() {
+
+            function success(position) {
+
+                loc = new Microsoft.Maps.Location(position.coords.latitude, position.coords.longitude);
+
+            }
+
+            navigator.geolocation.getCurrentPosition(success);
+        }
+
+    </script>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Find Restaurant</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Random Restaurant</h1>
+    <div id="msg">
+        <h4>Finding your Location... </h4>
+    </div>
+    <div class="loader"></div>
+
+    <ul class="list-unstyled"></ul>
+    <div id="a"></div>
+
+
+    <script type='text/javascript'
+        src='https://www.bing.com/api/maps/mapcontrol?key=Ag-9UmaOu3hCq2d2bxFTnt2ryCnUmD81o8_dEMuHCqbAFJ0TMwiY1IuhzPUjRaC6&callback=Getlocation'></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
